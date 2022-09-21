@@ -70,37 +70,44 @@ a{
 .big-wrapper{
     height: 100vh;
     width: 100%;
-    position: relative;
+}
+main{
+    margin-top: 50px;
 }
 /* player-bar */
 .player-bar{
     height: 80px;
     width: 100%;
     background-color: var(--dark-gray);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 999;
 }
 /* sidebar */
 .sidebar{
     height: calc(100vh - 80px);
     width: 150px;
     background-color: var(--black);
-    position: absolute;
-    top: 0;
-    left: 0;
+    color: var(--white-col);
+
 }
 /* SMALL-WRAPPER */
 .small-wrapper{
     width: calc(100% - 150px);
+    height: calc(100vh - 80px);
+    /* debug */
+    background-color: aquamarine;
 }
 /* header */
 header{ 
     background-color:var(--light-black);
     width: 100%;
+    margin-left: 150px;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 999;
     /* debug */
     min-height: 50px;
 }

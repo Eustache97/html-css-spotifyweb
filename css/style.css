@@ -16,9 +16,10 @@ img{
     /* palette */
     --black: #000;
     /* commons */
-    --light-black: #111;
+    --light-black: #080B12;
     --white-col:#fff;
-    --dark-gray: #333;
+    --dark-gray: #282828;
+    --primary-col: #141922;
     --space-gatter: 1.5em
 }
 /* /RESET */
@@ -54,6 +55,9 @@ a{
 }
 .mt-3{
     margin-top: 3em;
+}
+.mb-03{
+    margin-bottom: .3em;
 }
 .mb-1{
     margin-bottom: 1em;
@@ -94,14 +98,15 @@ main{
 .small-wrapper{
     width: calc(100% - 150px);
     height: calc(100vh - 80px);
+    color: var(--white-col);
     padding: 1rem;
     overflow-y: auto;
     /* debug */
-    background-color: aquamarine;
+    background-color: var(--primary-col);
 }
 /* header */
 header{ 
-    background-color:var(--light-black);
+    background-color:var(--light-black) ;
     width: 100%;
     margin-left: 150px;
     position: fixed;
@@ -127,7 +132,13 @@ main .row{
     width: 100%;
     gap: var(--space-gatter);
 }
- main .col{
+.card{
+    width: 100%;
+}
+.covers p{
+    font-size: .7rem;
+}
+ .covers .col{
     width: calc(100% / 6 - 1.5em);
     background-color: coral;
     text-align: center;
@@ -135,18 +146,43 @@ main .row{
     min-height: 100px;
 
 }
-/* section for-john */
+/* section populars-artists */
+ #populars-artists.covers .col img{
+    /* height: calc(100vw / 6 - 1.5em); */
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    object-fit: cover;
+    background-color: red;
+}
+/* player-bar */
+.player-bar{
+    justify-content: space-between;
+}
+.left-bar,
+.right-bar{
+    width: 150px;
+    height: 100%;
+    /* debug */
+    background-color: aquamarine;
+}
+.player{
+    height: 100%;
+    width: 50%;
+    background-color: brown;
+}
 /* MEDIAQUERIES */
 @media  screen and (max-width:1100px) {
 
-     main .col{
+    .covers .col{
         width: calc(100% / 4 - 1.5em);
     }
 }
 
 @media  screen and (max-width:700px) {
 
-     main .col{
+    .covers .col{
         width: calc(100% / 2 - 1.5em);
     }
 }

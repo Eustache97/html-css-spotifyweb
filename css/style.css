@@ -15,12 +15,16 @@ img{
 :root{
     /* palette */
     --black: #000;
-    /* commons */
     --light-black: #080B12;
     --white-col:#fff;
     --dark-gray: #282828;
     --primary-col: #141922;
-    --space-gatter: 1.5em
+   
+    /* commons */
+    --space-gatter: 1.5em;
+    --player-height: 80px;
+    --sidebar-width: 150px;
+    --sidebar-bottom-height: 80px;
 }
 /* /RESET */
 /* COMMONS */
@@ -88,16 +92,28 @@ main{
 }
 /* sidebar */
 .sidebar{
-    height: calc(100vh - 80px);
+    height: calc(100vh - var(--player-height));
     width: 150px;
     background-color: var(--black);
     color: var(--white-col);
+}
+.sidebar-top{
+    height:calc(100% - var(--sidebar-bottom-height)) ;
+    width: 100%;
+    /* debug */
+    background-color: rgba(250,250,250, .5 );
+}
+.sidebar-bottom{
+    height: var(--sidebar-bottom-height);
+    width: 100%;
+    /* debug */
+    background-color: coral;
 
 }
 /* SMALL-WRAPPER */
 .small-wrapper{
-    width: calc(100% - 150px);
-    height: calc(100vh - 80px);
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100vh - var(--player-height));
     color: var(--white-col);
     padding: 1rem;
     overflow-y: auto;

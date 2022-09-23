@@ -31,7 +31,6 @@ img{
 /* COMMONS */
 .flex-container{
     display:flex;
-    flex-wrap: wrap;
 }
 ul{
     list-style-type: none;
@@ -112,12 +111,11 @@ main{
 .player{
     height: 100%;
     width: 40%;
-    background-color: brown;
 }
 .player-bar{
     height: 80px;
     width: 100%;
-    color: inherit;
+    color: var(--white-col);
     background-color: var(--dark-gray);
     position: fixed;
     bottom: 0;
@@ -128,26 +126,32 @@ main{
     line-height: 40px;
     color: var(--white-col);
 }
+.player-top .playing-elements{
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+
+}
 .player-top .play{
     font-size: 1.5rem;
 }
 .player-bottom{
-    color: grey;
+    align-items: center;
 }
 
  .line{
     width: 80%;
+    height: 2px;
+    background-color: grey;
     margin: 0 auto;
     display: inline-block;
     vertical-align: middle;
-    position: relative;
 }
   .line .position-line{
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: 700;
     width: 10%;
+    height: 100%;
+    background-color: var(--white-col);
+    position: relative;
 } 
   .position-line:hover::after{
     content: "";
@@ -160,20 +164,15 @@ main{
     right: -5px;
     top: -5px;
 }
-/* .right-bar .volume{
-    width: 60%;
-    line-height: var(--player-height);
-
+.right-bar{
+    align-items: center;
 }
-.right-bar .list-display{
-    line-height: var(--player-height);
-}
-.right-bar .volume .line .long{
-    width: calc(80% - 1em);
+.right-bar .line{
+    width: 50%;
 }
 .right-bar .line .position-line{
-    width: 50%; */
-/* } */
+    width: 50%; 
+ }
 .player-bottom .timing,
 .player-bottom .duration{
     font-size: .8rem;
@@ -181,12 +180,18 @@ main{
 /* left-bar */
 .left-bar{
     justify-content: space-between;
-    align-items: center;;
+    align-items: center;
 }
-.left-bar .song img{
-    width: calc(var(--player-height) - 1em) ;
+.left-bar .song{
+    align-items: center;
+    width: 60%;
 }
-.left-bar .song .name-song{
+.left-bar .song .image-song{
+    width: 50%;
+    height: 100%;
+}
+.left-bar .song .name-song span{
+    font-size: .7rem;
 }
 /* sidebar */
 .sidebar{
@@ -245,6 +250,7 @@ header{
 main .row{
     width: 100%;
     gap: var(--space-gatter);
+    flex-wrap: wrap;
 }
 .card{
     width: 100%;
@@ -254,11 +260,7 @@ main .row{
 }
  .covers .col{
     width: calc(100% / 6 - 1.5em);
-    background-color: coral;
     text-align: center;
-    /* debug */
-    min-height: 100px;
-
 }
 /* section populars-artists */
  #populars-artists.covers .col img{
@@ -268,7 +270,6 @@ main .row{
     border-radius: 50%;
     margin: 0 auto;
     object-fit: cover;
-    background-color: red;
 }
 
 /* MEDIAQUERIES */
@@ -276,6 +277,10 @@ main .row{
 
     .covers .col{
         width: calc(100% / 4 - 1.5em);
+    }
+    /* player-bar */
+    .left-bar .song .image-song img{
+        min-width: 40px;
     }
 }
 

@@ -92,8 +92,14 @@ p{
 .mr-1{
     margin-right: 1em;
 }
+.mr-1_5{
+    margin-right: 1.5em;
+}
 .ml-1{
     margin-left: 1em;
+}
+.ml-1_5{
+    margin-left: 1.5em;
 }
 .mb-03{
     margin-bottom: .3em;
@@ -133,7 +139,7 @@ main{
     width: 40%;
 }
 .player-bar{
-    height: 80px;
+    height: var(--player-height);
     width: 100%;
     color: var(--white-col);
     background-color: var(--dark-gray);
@@ -172,18 +178,22 @@ main{
     display: inline-block;
     vertical-align: middle;
 }
+
   .line .position-line{
     width: 10%;
     height: 100%;
     background-color: var(--white-col);
     position: relative;
 } 
+.line .position-line:hover{
+    background-color: greenyellow;
+}
   .position-line:hover::after{
     content: "";
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background-color: var(--white-col);
+    background-color: greenyellow;
     display: inline-block;
     position: absolute;
     right: -5px;
@@ -230,8 +240,9 @@ main{
 /* sidebar */
 .sidebar{
     height: calc(100vh - var(--player-height));
-    width: 150px;
+    width: var(--sidebar-width);
     padding: 0 .5rem;
+    
     background-color: var(--black);
     color: var(--white-col);
 }
@@ -239,6 +250,10 @@ main{
     height:calc(100% - var(--sidebar-bottom-height)) ;
     width: 100%;
     /* debug */
+}
+.logo-small{
+    width: 100%;
+    display: none;
 }
 
  .label{
@@ -357,6 +372,7 @@ header a.btn-radius:hover{
 .main-menu ul{
     gap: var(--space-gatter);
     justify-content: center;
+    flex-wrap: wrap;
 }
 /* section recently */
 main .row{
@@ -430,6 +446,9 @@ main .row{
     .left-bar .song .image-song img{
         min-width: 40px;
     }
+    #populars-artists.covers .col img{
+        border-radius: 0%;
+    }
 }
 
 @media  screen and (max-width:700px) {
@@ -437,6 +456,37 @@ main .row{
     .covers .col{
         width: calc(100% / 2 - 1.5em);
     }
+    .action-song{
+        flex-direction: column;
+    }
+}
+
+@media  screen and (max-width:600px) {
+    
+    :root{
+        --sidebar-width:40px;
+    }   
+    
+    .sidebar .playlist{
+        display: none;
+    }
+    .sidebar-bottom{
+        display: none;
+    }
+    .sidebar .label{
+        display: none;
+    }
+    .sidebar-top .side-main-menu .icon{
+        width: 100%;
+    }
+    .logo{
+        display: none;
+    }
+    .logo-small{
+        display: block;
+    }
+
+    
 }
 
 /* /MEDIAQUERIES */

@@ -18,10 +18,13 @@ img{
     --light-black: #080B12;
     --white-col:#fff;
     --dark-gray: #282828;
+    --grey: #808080;
     --primary-col: #141922;
    
     /* commons */
     --space-gatter: 1.5em;
+    --card-height: 170px;
+    --header-height: 70px;
     --player-height: 80px;
     --sidebar-width: 150px;
     --sidebar-bottom-height: 80px;
@@ -42,6 +45,12 @@ a{
     text-decoration: none;
     color: inherit;
 }
+h1,h2,h3,h4,h5{
+    margin: .5em 0;
+}
+p{
+    color: var(--grey);
+}
 
 /* /COMMONS */
 /* UTILITY */
@@ -50,6 +59,14 @@ a{
 }
 .txtcent{
     text-align: center;
+}
+.txt-right{
+    text-align: right;
+}
+.btn-radius{
+    border-radius: 30px;
+    padding: .5em 2em;
+    border: 1px solid var(--white-col);
 }
 .pd-05{
     padding: .5em;
@@ -99,7 +116,7 @@ a{
     width: 100%;
 }
 main{
-    margin-top: 50px;
+    padding-top:var(--header-height) ;
 }
 
 /* player-bar */
@@ -135,11 +152,16 @@ main{
     justify-content: center;
 
 }
-.player-top .play{
-    font-size: 1.5rem;
-}
 .player-bottom{
     align-items: center;
+}
+.play-radius{
+    padding: .1rem .3rem .1rem .4rem;
+    border-radius: 50%;
+    border: 3px solid var(--white-col);
+}
+.play:hover .play-radius{
+    padding: .2rem .4rem .2rem .5rem;
 }
 
  .line{
@@ -193,8 +215,17 @@ main{
     width: 50%;
     height: 100%;
 }
-.left-bar .song .name-song span{
+.left-bar .song .name-song p{
     font-size: .7rem;
+}
+.left-bar .song .name-song p:hover{
+    color:var(--white-col);
+}
+.left-bar .action-song span{
+    color: var(--grey);
+}
+.left-bar .action-song span:hover{
+    color: var(--white-col);
 }
 /* sidebar */
 .sidebar{
@@ -215,6 +246,37 @@ main{
     line-height: 30px;
     vertical-align: text-bottom;
 }
+.sidebar a{
+    color: var(--grey);
+}
+.sidebar .icon{
+    filter:invert(.3);
+}
+.sidebar a:hover{
+    color: var(--white-col);
+}
+
+.sidebar a:hover .icon{
+    filter: invert(0);
+}
+.side-main-menu li:first-child a{
+    color: var(--white-col);
+}
+.side-main-menu li:first-child .icon{
+    filter: invert(0);
+}
+.side-main-menu li:first-child::before{
+    content: "";
+    height: 25px;
+    width: 2px;
+    background-color: greenyellow;
+    position: absolute;
+    top: 0;
+    left: -5px;
+}
+.sidebar-top .side-main-menu li{
+    position: relative;
+}
 .sidebar-top .side-main-menu .icon{
     width: 20%;
     line-height: 30px;
@@ -227,6 +289,9 @@ main{
 .sidebar-bottom{
     height: var(--sidebar-bottom-height);
     width: 100%;
+}
+.sidebar-bottom a .label.john{
+    color: var(--white-col);
 }
 .sidebar-bottom .icon{
     width: 15%;
@@ -253,21 +318,41 @@ main{
 /* header */
 header{ 
     background-color:var(--light-black) ;
-    width: 100%;
-    margin-left: 150px;
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width);
+    font-size: .8rem;
+    line-height:calc(var(--header-height) - 2em) ;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
-    /* debug */
-    min-height: 50px;
+}
+header a.btn-radius:hover{
+    font-size: .9rem;
 }
 /* MAIN */
 .main-menu{
-    width: 50%;
-    background-color: blue;
+    width: 60%;
     padding: 1rem;
+    color: var(--grey);
+    font-size: .8rem;
+    position: relative;
     margin: 0 auto;
+}
+.main-menu li:hover a{
+    color: var(--white-col);
+}
+.main-menu li:first-child::after{
+    content: "";
+    height: 2px;
+    width: 25px;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: -5px;
+    left: 30px;
+}
+.main-menu li{
+    position: relative;
 }
 .main-menu ul{
     gap: var(--space-gatter);
@@ -281,6 +366,38 @@ main .row{
 }
 .card{
     width: 100%;
+    position: relative;
+}
+.covers .card:hover .layover{
+    display: block;
+    z-index: 10;
+}
+.covers .card:hover .play-video{
+    display: block;
+    z-index: 10;
+}
+.layover{
+    background-color: rgb(0,0,0,.3);
+    width: 100%;
+    /* height: calc(100vw / 6 - 1.5em);
+    poichè si tratta di un quadrato delle stesse dimensioni di card 
+    ho provato a dare a layover l'altezza pari
+    al calcolo fatto per trovare la larghezza di col
+    usando però "vw", ma la misura è imprecisa quindi gli darò
+    altezza fissa presa dall'inspector; */
+    height: 170px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.layover .play-video{
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: none;
 }
 .covers p{
     font-size: .7rem;
@@ -291,12 +408,16 @@ main .row{
 }
 /* section populars-artists */
  #populars-artists.covers .col img{
-    /* height: calc(100vw / 6 - 1.5em); */
-    height: 150px;
-    width: 150px;
+    height: var(--card-height);
+    width: 100%;
     border-radius: 50%;
     margin: 0 auto;
     object-fit: cover;
+}
+#populars-artists.covers .layover{
+    height: var(--card-height);
+    width: 100%;
+    border-radius: 50%;
 }
 
 /* MEDIAQUERIES */

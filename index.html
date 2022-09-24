@@ -22,16 +22,17 @@
                     </div>
                     <ul class="side-main-menu mt-05">
                         <li>
-                           <a href=""><img class="icon" src="img/home.svg" alt="home"> 
-                            <span class="label">Home</span></a>
+                           <a id="home-link" href=""><img class="icon" src="img/home.svg" alt="home"> 
+                            <span class="label ">Home</span></a>
+                            <!-- avrei potuto anche usare direttamente il tag label associando le id? -->
                         </li>
                         <li>
-                            <a href=""><img class="icon" src="img/search.svg" alt="search">
-                            <span class="label">Cerca</span></a>
+                            <a href=""><img class="icon search" src="img/search.svg" alt="search">
+                            <span class="label search">Cerca</span></a>
                         </li>
                         <li>
-                            <a href=""><img class="icon" src="img/libreria.svg" alt="librery">
-                            <span class="label">La tua libreria</span></a>
+                            <a href=""><img class="icon librery" src="img/libreria.svg" alt="librery">
+                            <span class="label librery">La tua libreria</span></a>
                         </li>
                     </ul>
                     <div class="playlist mt-1">
@@ -58,14 +59,14 @@
                         <span class="label">Installa app</span></a>
                     <hr>
                     <a href=""><img class="profile" src="img/profile.svg" alt="profile">
-                        <span class="label"><strong>John Doe</strong></span></a>
+                        <span class="label john"><strong>John Doe</strong></span></a>
                 </div>
                 <!-- /sidebar bottom -->
             </div>
             <div class="small-wrapper">
                 <!-- header -->
-                <header>
-
+                <header class="txt-right pd-1">
+                    <a class="btn-radius" href="">EFFETTUA UPGRADE</a>
                 </header>
                 <!-- /header -->
                 <!-- main -->
@@ -73,22 +74,22 @@
                     <div class="main-menu">
                         <ul class="flex-container ">
                             <li>
-                                <a href="">link</a>
+                                <a href="">IN EVIDENZA</a>
                             </li>
                             <li>
-                                <a href="">link</a>
+                                <a href="">PODCAST</a>
                             </li>
                             <li>
-                                <a href="">link</a>
+                                <a href="">CLASSICHE</a>
                             </li>
                             <li>
-                                <a href="">link</a>
+                                <a href="">GENERI E MOOD</a>
                             </li>
                             <li>
-                                <a href="">link</a>
+                                <a href="">NUOVE USCITE</a>
                             </li>
                             <li>
-                                <a href="">link</a>
+                                <a href="">SCOPRI</a>
                             </li>
                         </ul>
                     </div>
@@ -97,22 +98,34 @@
                         <h2 class="mb-1">Recently played</h2>
                         <div class="row flex-container">
                             <div class="col">
-                                <div class="card"><img src="img/metal_lifting.jpg" alt="metal_lifting"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/metal_lifting.jpg" alt="metal_lifting"></div>
+                                <h4>Heavy Metal</h4>
+                                <p>Subtitle</p>
                             </div>
                             <div class="col">
-                                <div class="card"> <img src="img/stranger.jpeg" alt=" stranger"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/stranger.jpeg" alt=" stranger"></div>
+                                <h4>Stranger Things, Vol 1(a Netflix Original Series Soundtrack</h4>
+                                <p>Kyle Dixon & Michael Stein</p>
                             </div>
                             <div class="col">
-                                <div class="card"><img src="img/aquietplace.jpeg" alt="aquietplace"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/aquietplace.jpeg" alt="aquietplace"></div>
+                                <h4>A quiet place</h4>
+                                <p>Subtitle</p>
                             </div>
                             <div class="col">
-                                <div class="card"><img src="img/split.jpeg" alt="split"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/split.jpeg" alt="split"></div>
+                                <h4>Split</h4>
+                                <p>Subtitle</p>
                             </div>
                             <div class="col">
-                                <div class="card"><img src="img/cure.jpeg" alt="cure"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/cure.jpeg" alt="cure"></div>
+                                <h4>A cure for wellness</h4>
+                                <p>Subtitle</p>
                             </div>
                             <div class="col">
-                                <div class="card"><img src="img/sinister.jpeg" alt="sinister"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/sinister.jpeg" alt="sinister"></div>
+                                <h4>Sinister</h4>
+                                <p>Subtitle</p>
                             </div>
                         </div>
                     </section>
@@ -124,10 +137,12 @@
                         <p class="mb-2">Più ascolti, più accurati saranno i sugerimenti</p>
                         <div class="row flex-container">
                             <div class="col">
-                                <div class="card"><img src="img/radar.jpeg" alt="radar"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/radar.jpeg" alt="radar"></div>
+                                <h4>Release Radar</h4>
                             </div>
                             <div class="col">
-                                <div class="card"><img src="img/mixdaily.jpeg" alt="mixdaily"></div>
+                                <div class="card"><div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div><img src="img/mixdaily.jpeg" alt="mixdaily"></div>
+                                <h4>Daily Mix 1</h4>
                             </div>
                         </div>
                     </section>
@@ -140,13 +155,17 @@
                         <div class="row flex-container">
                             <div class="col">
                                 <div class="card">
+                                    <div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div>
                                     <img src="img/youg.jpeg" alt="">
                                 </div>
+                                <h4>Lana del Rey</h4>
                             </div>
                             <div class="col">
                                 <div class="card">
+                                    <div class="layover"><span class="play-video"><i class="fa-regular fa-circle-play"></i></span></div>
                                     <img src="img/einaudi.jpeg" alt="">
                                 </div>
+                                <h4>Ludovico Einaudi</h4>
                             </div>
                         </div>
                     </section>
@@ -159,21 +178,21 @@
             <div class="left-bar pd-05 flex-container">
                 <div class="song flex-container">
                     <div class="image-song pd-05"><img src="img/sinister.jpeg" alt=""></div>
-                    <div class="name-song"><h5>Sinister</h5><span>Brano nome</span></div>
+                    <div class="name-song"><h5>Sinister</h5><p>Brano nome</p></div>
                 </div>
                 <div class="action-song">
-                    <span class="heart mr-1"><i class="fa-regular fa-heart"></i></span>
-                    <span class="folder"><i class="fa-regular fa-folder"></i></span>
+                    <a href=""><span class="heart mr-1"><i class="fa-regular fa-heart"></i></span></a>
+                    <a href=""><span class="folder"><i class="fa-regular fa-folder"></i></span></a>
                 </div>
             </div>
             <div class="player pd-05">
                 <div class="player-top txtcent">
                     <div class="playing-elements flex-container">
-                        <span class="shuffle mr-1"><i class="fa-solid fa-shuffle"></i></span>
-                        <span class="back"><i class="fa-solid fa-backward-step"></i></span>
-                        <span class="play ml-1 mr-1"><i class="fa-regular fa-circle-play"></i></span>
-                        <span class="next mr-1"><i class="fa-solid fa-forward-step"></i></span>
-                        <span class="repeat"><i class="fa-solid fa-rotate-right"></i></span>
+                        <a href=""><span class="shuffle mr-1"><i class="fa-solid fa-shuffle"></i></span></a>
+                        <a href=""><span class="back"><i class="fa-solid fa-backward-step"></i></span></a>
+                        <a class="play" href=""><span class="play-radius ml-1 mr-1"><i class="fa-solid fa-play"></i></span></a>
+                        <a href=""><span class="next mr-1"><i class="fa-solid fa-forward-step"></i></span></a>
+                        <a href=""><span class="repeat"><i class="fa-solid fa-rotate-right"></i></span></a>
                     </div>
                 </div>
                 <div class="player-bottom flex-container txtcent">
